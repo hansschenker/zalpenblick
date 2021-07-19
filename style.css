@@ -1,0 +1,144 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+}
+
+.bordered-red {
+    border: 1px solid red;
+}
+.bordered-blue {
+    border: 1px solid blue;
+}
+.bordered-green {
+    border: 1px solid green;
+}
+
+.bordered {
+    border: 1px solid black;
+}
+
+.page-container {
+    height: 90vh;
+    max-width: 80vw;
+    margin: 0 auto;
+    background-color: rgb(184, 231, 184);
+}
+
+.grid-container {
+    display: grid;
+    height: 90vh;
+    max-width: 80vw;
+    margin: 0 auto;
+    grid-template-areas: "lo ho ho ho ho ho"
+                         "lo ho ho ho ho ho"
+                         "nv nv nv nv nv nv"
+                          "sb mn mn mn mn mn"
+                          "sb mn mn mn mn mn"
+                          "ft ft ft ft ft ft"
+    ;
+    grid-template-columns: 400px repeat(4,  200px);
+    grid-template-rows: repeat(6, 150px) ;
+    gap: 5px;
+}
+
+.grid-item {
+    flex: 1 1 auto;
+}
+
+.logo {
+    grid-area: lo;
+}
+.logo img {
+    height: 100%;
+    width: 100%;
+}
+
+
+.hero {
+    grid-area: ho;
+    display:grid;
+    grid-template-rows:  1fr 1fr;
+    grid-template-columns: 1fr;
+    align-items:space-evenly;
+}
+.hero img:nth-of-type(1) {
+    width: 100%;
+    height: 110%;
+    opacity: .7;
+}
+/* .hero img:nth-of-type(2) {
+    height: 40%;
+    width: 15%;
+    opacity: .7;
+} */
+
+
+.biosuisse {
+    grid-area: bio;
+}
+
+.navigation {
+    grid-area: nv;
+    display: flex;
+    justify-content: space-around;
+}
+.navigation ul {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    color: green;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.navigation ul img {
+    height: 100%;
+    width: 30%;
+    
+    margin-left: auto;
+}
+
+.sidebar {
+    grid-area: sb;
+}
+
+.biosuisse {
+    grid-area: ho;
+}
+.main {
+    grid-area: mn;
+    display: flex;
+    
+}
+.main article section {
+    column-count: 1;
+    font-size: 1rem;
+}
+
+.footer {
+    grid-area: ft;
+}
+.footer ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer ul li {
+    display: inline-block;
+}
